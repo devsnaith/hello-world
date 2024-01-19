@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: unset;
-    transition: all 0.5s;
+    /* transition: all 0.5s; */
     font-weight: bold;
     font-family: monospace;
 }
@@ -15,7 +15,6 @@ a {
     border-radius: 2px;
     padding: 0.5em 1em;
     color: black;
-    margin-bottom: 0.5em;
 }
 
 body {
@@ -51,9 +50,9 @@ body {
     overflow: auto;
 }
 
-#header {
+#header, #actions {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
 }
@@ -62,5 +61,10 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.22);
     max-height: 65vh;
     padding: 1em;
+    margin-top: 0.5em;
     overflow: auto;
+}
+
+#actions {
+    gap: 1em;
 }
