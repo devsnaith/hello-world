@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./libs/jquery-3.7.1.min.js"></script>
+    <script src="./libs/highlight.min.js"></script>
+    <script src="./libs/go.min.js"></script>
+    
+    <link rel="stylesheet" href="./css/default.css">
+    <link rel="stylesheet" href="./css/default.min.css">
+    <title>Hello, World!;</title>
+</head>
+<body>
+    <div id="dialog">
+        <section id="header">
+            <a id="title" href="#">Initialzing...</a>
+            <section>
+                <a id="randomBtn" onclick="random()" href="#">Random</a>
+                <a href="https://github.com/leachim6/hello-world">Github</a>
+            </section>
+        </section>
+        <div style="display: none;" id="content">
+            <pre><code id="code">
+                </textarea>
+            </code></pre>
+        </div>
+    </div>
+</body>
+<script>
+    var languages = null;
+    $.get("https://raw.githubusercontent.com/leachim6/hello-world/main/readme.md", function(data) {
+            const beginIndex = data.indexOf("<!--Languages start-->");
+            const endIndex = data.lastIndexOf("<!--Languages end-->");
+            languages = data.substr(beginIndex, endIndex).split("*");
+            random();
+        });
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+    }
+    function random() {
+        if(languages == null)
+            return;
+        $("#title").text("Loading...");
+        $('#randomBtn').css('display', 'none');
+        setTimeout(() => {
+            $('#randomBtn').css('display', 'inline');
+        }, 2000);
+        $("#code").removeAttr("data-highlighted");
+        $("#code").removeAttr("hljs");
+        $('#code').css('opacity', '0');
+        language = languages[getRandomInt(1, languages.length)];
+        languages_link = decodeURI(language.substr(language.indexOf("(")+1, language.indexOf(")")));
+        languages_link = languages_link.substr(0, languages_link.length-2);
+        languages_content = $.get("https://raw.githubusercontent.com/leachim6/hello-world/main/"+languages_link,  function(data) {
+            $("#title").attr("href", "https://github.com/leachim6/hello-world/tree/main/"+languages_link);
+            $("#title").text(language.substr(language.indexOf("[")+1, language.indexOf("]")-2));
+            $("#content").css({"display": "block"});
+            $("#code").text(data);
+            hljs.highlightAll();
+            $('#code').css('opacity', '1');
+        });
+    }
+</script>
+</html>

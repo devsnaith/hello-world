@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: unset;
+    transition: all 1s;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+a {
+    background-color:whitesmoke;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 2px;
+    padding: 0.5em 1em;
+    color: black;
+    margin-bottom: 0.5em;
+}
+
+body {
+    background: url("../images/arabesque.png");
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#dialog {
+    border: 1px solid rgba(0, 0, 0, 0.22);
+    background-color: white;
+    border-radius: 4px;
+    min-width: 32em;
+    padding: 1em;
+    position: relative;
+}
+
+#title {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: unset;
+    font-size: 1.2em;
+    border: unset;
+    color: black;
+    padding: 0;
+    overflow: auto;
+}
+
+#header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+#code {
+    /* visibility: hidden; */
+    border: 1px solid rgba(0, 0, 0, 0.22);
+    max-height: 65vh;
+    width: 30em;
+
+    padding: 1em;
+    overflow: auto;
+}
