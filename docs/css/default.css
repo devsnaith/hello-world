@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: unset;
-    transition: all 1s;
+    transition: all 0.5s;
     font-weight: bold;
     font-family: monospace;
 }
@@ -34,9 +34,11 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.22);
     background-color: white;
     border-radius: 4px;
-    min-width: 32em;
     padding: 1em;
     position: relative;
+
+    width: 95%;
+    max-width: 32em;
 }
 
 #title {
@@ -56,11 +58,8 @@ body {
 }
 
 #code {
-    /* visibility: hidden; */
     border: 1px solid rgba(0, 0, 0, 0.22);
     max-height: 65vh;
-    width: 30em;
-
     padding: 1em;
     overflow: auto;
 }

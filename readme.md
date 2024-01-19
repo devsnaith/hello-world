@@ -8,7 +8,7 @@ Thanks to everyone who continues to contribute; new languages are created every 
 Make sure to see [contributing.md](/contributing.md) for instructions on contributing to the project!
 
 <!--Languages start-->
-## Languages (1005 total)
+## Languages (1006 total)
 
 * [!](%23/%21)
 * [!@#$%^&*()_+](%23/%21%40%23%24%25%5E%26%E2%88%97%28%29_%2B)
@@ -329,6 +329,7 @@ Make sure to see [contributing.md](/contributing.md) for instructions on contrib
 * [Dylan](d/Dylan.dl)
 * [Dyvil](d/Dyvil.dyv)
 * [D♭♭](d/D%E2%99%AD%E2%99%AD)
+* [index](docs/index.html)
 * [E](e/E.e)
 * [e62qpodb593](e/e62qpodb593)
 * [EBuild](e/EBuild.ebuild)
