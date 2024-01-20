@@ -34,3 +34,51 @@ label:hover {
     width: 95%;
     max-width: 32em;
 }
+
+#btngroup {
+    display: flex;
+    flex-wrap: wrap;
+    margin-block: 1em;
+    gap: 1em;
+}
+
+#btngroup > a {
+    border: 1px solid black;
+    border-radius: 4px;
+
+    box-shadow: 1px 1px 1px black;
+
+    background-color: wheat;
+    padding: 0.5em;
+    width: 100%;
+
+    color: black;
+}
+
+#btngroup > a:hover {
+    background-color: white;
+}
+
+#progress {
+    background-color: brown;
+    border: 1px solid black;
+    border-radius: 2px;
+    height: 0.5em;
+    width: 100%;
+}
+
+#status {
+    animation: seemee 3s infinite;
+}
+
+@keyframes seemee {
+    0% {
+        color: black;
+    }
+    50% {
+        color: chocolate;
+    }
+    100% {
+        color: black;
+    }
+}

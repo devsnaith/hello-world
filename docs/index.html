@@ -13,6 +13,7 @@
 </head>
 <body>
     <div id="dialog">
+        <!-- <section id="languageSource"> -->
         <section id="languageSource" style="display: none;">
             <h2>Select Language source:</h2>
             <section style="margin: 0.5em 1em; color: #0A014F;">
@@ -28,21 +29,30 @@
         </section>
         <section id="Actions" style="display: none;">
             <h2 style="margin-bottom: 0.5em">Hello World in every computer language!</h2>
-            <section style="width: 100%; display: flex; justify-content: space-between;">
+            <section class="bar" style="width: 100%; display: flex; justify-content: space-between;">
                 <code id="codeName" style="word-wrap: break-word; width: 100%; color: black;"><b>Loading...</b></code>
             </section>
             <pre style="display: grid;">
                 <code style="max-height: 15em; overflow: auto;" id="codearea"></code>
             </pre>
-            <section style="margin-bottom: 1em; width: 100%; display: flex; justify-content: space-between;">
+            <section id="playpart" style="display: none; margin-top: 1.2em;">
+                <span style="display: block; font-size: 1.2em; margin-block: 1em;">What is the language above?</span>
+                <section id="btngroup">
+                    <a id="btnAction-0" onclick="gameBtn(this)" href="#"></a>
+                    <a id="btnAction-1" onclick="gameBtn(this)" href="#"></a>
+                    <a id="btnAction-2" onclick="gameBtn(this)" href="#"></a>
+                    <a id="btnAction-3" onclick="gameBtn(this)" href="#"></a>
+                </section>
+                <section id="progress"></section>
+            </section>
+            <section class="bar" style="margin-bottom: 1em; width: 100%; display: flex; justify-content: space-between;">
                 <a id="codePath" href="#"><b>[View on GitHub]</b></a>
                 <a id="Random" onclick="printRandomCode()" href="#"><b>[Random]</b></a>
             </section>
-
-            <p id="status" style="text-align: center;">
+            <p onclick="go()" class="bar" id="status" style="cursor: pointer; text-align: center;">
                 <span id="length"></span> Hello World has been loaded!
             </p>
-            <p style="margin-top: 0.5em;">
+            <p class="bar" style="margin-top: 0.5em;">
                 This page was created for <b><mark>leachim6/hello-world repo</mark></b>; <a href="https://github.com/leachim6/hello-world">Click here</a> to go to the GitHub page.
                 <br><span>Site Created with Love by <a href="https://github.com/devsnaith">@devsnaith</a></span>
             </p>
