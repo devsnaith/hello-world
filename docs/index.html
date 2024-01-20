@@ -8,60 +8,46 @@
     <script src="./libs/go.min.js"></script>
     
     <link rel="stylesheet" href="./css/default.css">
-    <link rel="stylesheet" href="./css/default.min.css">
+    <link rel="stylesheet" href="./css/3024.min.css">
     <title>Hello, World!;</title>
 </head>
 <body>
     <div id="dialog">
-        <section id="header">
-            <a id="title" href="#">Initialzing...</a>
-            <section id="actions">
-                <a id="randomBtn" onclick="random()" href="#">Random</a>
-                <a href="https://github.com/leachim6/hello-world">Github</a>
+        <section id="languageSource" style="display: none;">
+            <h2>Select Language source:</h2>
+            <section style="margin: 0.5em 1em; color: #0A014F;">
+                <label onclick="inputsource(this)" for="sourceBtnGuthub">leachim6/hello-world (latest)</label><br>
+                <label onclick="inputsource(this)" for="sourceBtnBackup">devsnaith/Backup_source</label>
+                <input style="display: none;" type="radio" name="languageSource" id="sourceBtnGuthub" value="github" checked>
+                <input style="display: none;" type="radio" name="languageSource" id="sourceBtnBackup" value="backup">
             </section>
+            <p style="margin-top: 0.5em;">
+                Use <span style="color: #0A014F;">devsnaith/Backup_source</span>
+                only if you feel that there is an error or something wrong, or the site is not working properly.
+            </p>
         </section>
-        <div style="display: none;" id="content">
-            <pre><code id="code">
-                </textarea>
-            </code></pre>
-        </div>
+        <section id="Actions" style="display: none;">
+            <h2 style="margin-bottom: 0.5em">Hello World in every computer language!</h2>
+            <section style="width: 100%; display: flex; justify-content: space-between;">
+                <code id="codeName" style="word-wrap: break-word; width: 100%; color: black;"><b>Loading...</b></code>
+            </section>
+            <pre style="display: grid;">
+                <code style="max-height: 15em; overflow: auto;" id="codearea"></code>
+            </pre>
+            <section style="margin-bottom: 1em; width: 100%; display: flex; justify-content: space-between;">
+                <a id="codePath" href="#"><b>[View on GitHub]</b></a>
+                <a id="Random" onclick="printRandomCode()" href="#"><b>[Random]</b></a>
+            </section>
+
+            <p id="status" style="text-align: center;">
+                <span id="length"></span> Hello World has been loaded!
+            </p>
+            <p style="margin-top: 0.5em;">
+                This page was created for <b><mark>leachim6/hello-world repo</mark></b>; <a href="https://github.com/leachim6/hello-world">Click here</a> to go to the GitHub page.
+                <br><span>Site Created with Love by <a href="https://github.com/devsnaith">@devsnaith</a></span>
+            </p>
+        </section>
     </div>
 </body>
-<script>
-    var languages = null;
-    $.get("https://raw.githubusercontent.com/leachim6/hello-world/main/readme.md", function(data) {
-            const beginIndex = data.indexOf("<!--Languages start-->");
-            const endIndex = data.lastIndexOf("<!--Languages end-->");
-            languages = data.substr(beginIndex, endIndex).split("*");
-            random();
-        });
-    function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
-    }
-    function random() {
-        if(languages == null)
-            return;
-        $("#title").text("Loading...");
-        $('#randomBtn').css('display', 'none');
-        setTimeout(() => {
-            $('#randomBtn').css('display', 'inline');
-        }, 2000);
-        $("#code").removeAttr("data-highlighted");
-        $("#code").removeAttr("hljs");
-        $('#code').css('opacity', '0');
-        language = languages[getRandomInt(1, languages.length)];
-        languages_link = decodeURI(language.substr(language.indexOf("(")+1, language.indexOf(")")));
-        languages_link = languages_link.substr(0, languages_link.length-2);
-        languages_content = $.get("https://raw.githubusercontent.com/leachim6/hello-world/main/"+languages_link,  function(data) {
-            $("#title").attr("href", "https://github.com/leachim6/hello-world/tree/main/"+languages_link);
-            $("#title").text(language.substr(language.indexOf("[")+1, language.indexOf("]")-2));
-            $("#content").css({"display": "block"});
-            $("#code").text(data);
-            hljs.highlightAll();
-            $('#code').css('opacity', '1');
-        });
-    }
-</script>
+<script src="./libs/web/HelloWorld.js"></script>
 </html>
