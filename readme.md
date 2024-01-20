@@ -5,7 +5,7 @@ Hello World in every computer language.
 As I watch the collection expand, this project has blown up more than I ever thought possible.
 Thanks to everyone who continues to contribute; new languages are created every day!
 
-There is now a site for this repo you can see it [Right here](/https://devsnaith.github.io/hello-world).<br>
+There is now a site for this repo you can see it [Right here](https://devsnaith.github.io/hello-world).<br>
 The site contains a question game, so you can tests your memory :]
 
 Make sure to see [contributing.md](/contributing.md) for instructions on contributing to the project!
